@@ -17,6 +17,8 @@ describe.each([
     expect(articles).toHaveLength(count);
     for (const article of articles) {
       expect(within(article).getByText(category, { exact: true })).toBeInTheDocument();
+      // Cards sit directly under the h1, so their titles are h2 (no skipped levels).
+      expect(within(article).getByRole('heading', { level: 2 })).toBeInTheDocument();
     }
     expect(document.title).toBe(`${heading} | Entertainment web app`);
     await expectNoAxeViolations(container);

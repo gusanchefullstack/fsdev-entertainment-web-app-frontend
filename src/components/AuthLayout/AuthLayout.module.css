@@ -11,6 +11,11 @@
 .logoLink {
   display: block;
   border-radius: var(--radius-card);
+  transition: opacity 150ms ease-out;
+}
+
+.logoLink:hover {
+  opacity: var(--opacity-meta);
 }
 
 .logo {

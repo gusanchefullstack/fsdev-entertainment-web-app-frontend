@@ -38,7 +38,7 @@ export function CategoryPage({ title, category, searchLabel }: CategoryPageProps
           (results ? (
             <SearchResults term={term} results={results} />
           ) : (
-            <ShowGrid shows={shows} renderActions={renderBookmarkButton} />
+            <ShowGrid shows={shows} renderActions={renderBookmarkButton} cardHeadingLevel={2} />
           ))}
       </ContentSection>
     </AppLayout>

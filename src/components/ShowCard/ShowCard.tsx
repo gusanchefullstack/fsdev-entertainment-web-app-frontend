@@ -9,9 +9,12 @@ interface ShowCardProps {
   show: Show;
   variant: 'regular' | 'trending';
   actions?: ReactNode;
+  /** 3 under a section h2; 2 when the grid sits directly under the page h1. */
+  headingLevel?: 2 | 3;
 }
 
-export function ShowCard({ show, variant, actions }: ShowCardProps) {
+export function ShowCard({ show, variant, actions, headingLevel = 3 }: ShowCardProps) {
+  const Title = headingLevel === 2 ? 'h2' : 'h3';
   const titleId = useId();
   const [imageFailed, setImageFailed] = useState(false);
   const trending = variant === 'trending' ? show.thumbnail.trending : undefined;
@@ -71,9 +74,9 @@ export function ShowCard({ show, variant, actions }: ShowCardProps) {
           <span className={styles.dot} aria-hidden="true" />
           <span>{show.rating}</span>
         </p>
-        <h3 id={titleId} className={styles.title}>
+        <Title id={titleId} className={styles.title}>
           {show.title}
-        </h3>
+        </Title>
       </div>
     </article>
   );

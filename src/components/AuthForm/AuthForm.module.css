@@ -4,7 +4,7 @@
   flex-direction: column;
   gap: var(--space-500);
   width: 100%;
-  padding: var(--space-300) var(--space-300) var(--space-400);
+  padding: var(--space-400) var(--space-300);
   border-radius: var(--radius-auth-card);
   background: var(--color-blue-900);
 }
@@ -51,7 +51,7 @@
   min-width: 0;
   border: 0;
   background: transparent;
-  font-size: var(--text-preset-4-size);
+  font-size: var(--text-auth-body-size);
   font-weight: var(--font-weight-light);
   caret-color: var(--color-red-500);
   outline: none;
@@ -64,7 +64,7 @@
 
 .fieldError {
   flex: none;
-  font-size: var(--text-preset-5-size);
+  font-size: var(--text-auth-error-size);
   color: var(--color-red-500);
 }
 
@@ -75,7 +75,7 @@
 }
 
 .formError {
-  font-size: var(--text-preset-4-size);
+  font-size: var(--text-auth-body-size);
   color: var(--color-red-500);
   text-align: center;
 }
@@ -89,7 +89,7 @@
   height: 48px;
   border-radius: var(--radius-button);
   background: var(--color-red-500);
-  font-size: var(--text-preset-4-size);
+  font-size: var(--text-auth-body-size);
   font-weight: var(--font-weight-light);
   transition: background-color 150ms ease-out, color 150ms ease-out;
 }
@@ -108,7 +108,7 @@
   display: flex;
   justify-content: center;
   gap: var(--space-100);
-  font-size: var(--text-preset-4-size);
+  font-size: var(--text-auth-body-size);
   font-weight: var(--font-weight-light);
 }
 
