@@ -1,0 +1,19 @@
+/* Figma: 16081:1361 (desktop search), 16081:6722 (mobile search) */
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-300);
+}
+
+.heading {
+  font-size: var(--text-preset-1-size);
+  font-weight: var(--text-preset-1-weight);
+  letter-spacing: var(--text-preset-1-letter-spacing);
+  overflow-wrap: anywhere;
+}
+
+@media (min-width: 1024px) {
+  .section {
+    gap: var(--space-400);
+  }
+}

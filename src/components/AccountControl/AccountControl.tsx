@@ -2,6 +2,7 @@ import { useEffect, useId, useRef, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router';
 import avatar from '../../assets/image-avatar.png';
 import { useAuth } from '../../context/AuthContext';
+import { useLayoutEvents } from '../AppLayout/LayoutEvents';
 import styles from './AccountControl.module.css';
 
 export function AccountControl() {
@@ -13,9 +14,11 @@ export function AccountControl() {
   const location = useLocation();
   const navigate = useNavigate();
 
+  const { searchActivity } = useLayoutEvents();
+
   useEffect(() => {
     setOpen(false);
-  }, [location.pathname]);
+  }, [location.pathname, searchActivity]);
 
   useEffect(() => {
     if (!open) return;

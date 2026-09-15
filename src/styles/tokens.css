@@ -34,6 +34,7 @@
   --layout-sidebar-width: 96px;
   --layout-content-start-desktop: 164px;
   --layout-content-top-desktop: 64px;
+  --layout-content-end-desktop: 36px; /* 1440 - 164 - 1240 */
 
   /* Radius (16092:43 cards, 16092:8403 sidebar) */
   --radius-card: 8px;

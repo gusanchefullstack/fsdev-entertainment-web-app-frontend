@@ -1,14 +1,17 @@
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { Navigate } from 'react-router';
 import { AppLayout } from '../../components/AppLayout/AppLayout';
 import { renderBookmarkButton } from '../../components/BookmarkButton/BookmarkButton';
 import { ContentSection } from '../../components/ContentSection/ContentSection';
+import { SearchBar } from '../../components/SearchBar/SearchBar';
+import { SearchResults } from '../../components/SearchResults/SearchResults';
 import { ShowGrid } from '../../components/ShowGrid/ShowGrid';
 import { StatusMessage } from '../../components/StatusMessage/StatusMessage';
 import { useAuth } from '../../context/AuthContext';
 import { useBookmarks } from '../../context/BookmarksContext';
 import { useCatalog } from '../../context/CatalogContext';
 import { friendlyMessage } from '../../lib/errorMessages';
+import { searchShows } from '../../lib/searchShows';
 import { useDocumentTitle } from '../../lib/useDocumentTitle';
 
 export function BookmarksPage() {
@@ -20,6 +23,8 @@ export function BookmarksPage() {
   const bookmarked = useMemo(() => shows.filter((show) => bookmarkedIds.has(show.id)), [shows, bookmarkedIds]);
   const movies = bookmarked.filter((show) => show.category === 'Movie');
   const tvSeries = bookmarked.filter((show) => show.category === 'TV Series');
+  const [term, setTerm] = useState('');
+  const results = searchShows(bookmarked, term);
 
   if (authStatus === 'signedOut') return <Navigate to="/login?returnTo=%2Fbookmarks" replace />;
 
@@ -28,10 +33,13 @@ export function BookmarksPage() {
   return (
     <AppLayout>
       <h1 className="visually-hidden">Bookmarked shows</h1>
+      <SearchBar label="Search for bookmarked shows" value={term} onChange={setTerm} />
       {catalogStatus === 'error' ? (
         <StatusMessage variant="error" message={friendlyMessage('CATALOG_LOAD')} onRetry={retry} />
       ) : loading ? (
         <StatusMessage variant="loading" />
+      ) : results ? (
+        <SearchResults term={term} results={results} />
       ) : bookmarked.length === 0 ? (
         <StatusMessage variant="empty" message={friendlyMessage('NO_BOOKMARKS')} />
       ) : (

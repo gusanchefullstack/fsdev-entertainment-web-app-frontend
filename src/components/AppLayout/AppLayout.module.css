@@ -32,7 +32,7 @@
   }
 
   .main {
-    --page-padding-inline-end: var(--space-400);
+    --page-padding-inline-end: var(--layout-content-end-desktop);
     gap: var(--space-500);
     padding: var(--layout-content-top-desktop) var(--page-padding-inline-end) var(--space-900)
       var(--layout-content-start-desktop);
