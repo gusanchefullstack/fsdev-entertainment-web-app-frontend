@@ -1,0 +1,11 @@
+node_modules
+dist
+.env*
+*.fig
+*.sketch
+*.xd
+.vercel
+.DS_Store
+*.log
+coverage
+*.tsbuildinfo
