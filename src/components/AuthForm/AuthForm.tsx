@@ -50,7 +50,7 @@ export function AuthForm({
   return (
     <div className={styles.card}>
       <h1 className={styles.title}>{title}</h1>
-      <form ref={formRef} className={styles.form} noValidate onSubmit={handleSubmit}>
+      <form ref={formRef} className={`${styles.form} ${fields.length > 2 ? styles.tallForm : ''}`} noValidate onSubmit={handleSubmit}>
         <div className={styles.fields}>
           {fields.map((field) => {
             const inputId = `${baseId}-${field.name}`;

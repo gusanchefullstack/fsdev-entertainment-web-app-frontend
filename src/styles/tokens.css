@@ -47,6 +47,8 @@
   --text-auth-title-letter-spacing: -0.5px;
   --text-auth-body-size: 15px; /* Text Preset 4 desktop, used by the auth form on every screen */
   --text-auth-error-size: 13px; /* Text Preset 5 desktop */
+  --space-auth-card-block: 29px; /* Figma auth card: content centered in a fixed-height card (mobile) */
+  --space-auth-card-block-desktop: 33px; /* same, tablet + desktop */
   --radius-auth-card: 10px;
   --radius-auth-card-desktop: 20px;
   --radius-button: 6px;
