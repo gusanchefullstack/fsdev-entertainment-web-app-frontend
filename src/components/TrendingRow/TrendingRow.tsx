@@ -9,7 +9,7 @@ interface TrendingRowProps {
 }
 
 function revealFocusedCard(event: FocusEvent<HTMLLIElement>) {
-  event.currentTarget.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+  event.currentTarget.scrollIntoView?.({ block: 'nearest', inline: 'nearest' });
 }
 
 export function TrendingRow({ shows, renderActions }: TrendingRowProps) {

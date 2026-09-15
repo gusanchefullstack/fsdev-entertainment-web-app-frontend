@@ -1,4 +1,5 @@
 import { AppLayout } from '../../components/AppLayout/AppLayout';
+import { renderBookmarkButton } from '../../components/BookmarkButton/BookmarkButton';
 import { ContentSection } from '../../components/ContentSection/ContentSection';
 import { ShowGrid } from '../../components/ShowGrid/ShowGrid';
 import { StatusMessage } from '../../components/StatusMessage/StatusMessage';
@@ -23,10 +24,10 @@ export function HomePage() {
       {status === 'ready' && (
         <>
           <ContentSection title="Trending" variant="trending">
-            <TrendingRow shows={trending} />
+            <TrendingRow shows={trending} renderActions={renderBookmarkButton} />
           </ContentSection>
           <ContentSection title="Recommended for you">
-            <ShowGrid shows={recommended} />
+            <ShowGrid shows={recommended} renderActions={renderBookmarkButton} />
           </ContentSection>
         </>
       )}

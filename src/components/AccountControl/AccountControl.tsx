@@ -47,8 +47,9 @@ export function AccountControl() {
 
   const handleSignOut = async () => {
     setOpen(false);
-    await signOut();
+    // Leave the signed-in-only page first so it does not redirect to Login.
     if (location.pathname === '/bookmarks') navigate('/', { replace: true });
+    await signOut();
   };
 
   return (

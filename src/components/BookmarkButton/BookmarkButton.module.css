@@ -1,0 +1,29 @@
+/* Figma: 32px circle, blue-950 at 50%; hover turns white with a dark icon (16081:1459) */
+.button {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--color-bookmark-bg);
+  transition: background-color 150ms ease-out;
+}
+
+.icon {
+  display: block;
+  width: 12px;
+  height: 14px;
+  background-color: var(--color-white);
+  mask: var(--icon) center / contain no-repeat;
+  transition: background-color 150ms ease-out;
+}
+
+.button:hover,
+.button:focus-visible {
+  background: var(--color-white);
+}
+
+.button:hover .icon,
+.button:focus-visible .icon {
+  background-color: var(--color-black);
+}

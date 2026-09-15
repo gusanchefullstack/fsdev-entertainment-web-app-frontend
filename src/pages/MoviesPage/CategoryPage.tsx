@@ -1,5 +1,6 @@
 import type { Category } from '../../api/types';
 import { AppLayout } from '../../components/AppLayout/AppLayout';
+import { renderBookmarkButton } from '../../components/BookmarkButton/BookmarkButton';
 import { ContentSection } from '../../components/ContentSection/ContentSection';
 import { ShowGrid } from '../../components/ShowGrid/ShowGrid';
 import { StatusMessage } from '../../components/StatusMessage/StatusMessage';
@@ -25,7 +26,7 @@ export function CategoryPage({ title, category }: CategoryPageProps) {
         {status === 'error' && (
           <StatusMessage variant="error" message={friendlyMessage('CATALOG_LOAD')} onRetry={retry} />
         )}
-        {status === 'ready' && <ShowGrid shows={shows} />}
+        {status === 'ready' && <ShowGrid shows={shows} renderActions={renderBookmarkButton} />}
       </ContentSection>
     </AppLayout>
   );

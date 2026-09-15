@@ -4,6 +4,7 @@ import { ApiError } from '../../api/ApiClient';
 import { AuthForm } from '../../components/AuthForm/AuthForm';
 import { AuthLayout } from '../../components/AuthLayout/AuthLayout';
 import { useAuth } from '../../context/AuthContext';
+import { useBookmarks } from '../../context/BookmarksContext';
 import { friendlyMessage } from '../../lib/errorMessages';
 import { safeReturnTo } from '../../lib/safeReturnTo';
 import { useDocumentTitle } from '../../lib/useDocumentTitle';
@@ -15,6 +16,7 @@ const MIN_PASSWORD_LENGTH = 8;
 export function SignUpPage() {
   useDocumentTitle('Sign Up');
   const { status, signUp } = useAuth();
+  const { applyPendingBookmark } = useBookmarks();
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const rawReturnTo = searchParams.get('returnTo');
@@ -46,7 +48,8 @@ export function SignUpPage() {
     setSubmitting(true);
     try {
       await signUp(email.trim(), password);
-      navigate(returnTo, { replace: true });
+      const pendingReturnTo = await applyPendingBookmark();
+      navigate(pendingReturnTo ?? returnTo, { replace: true });
     } catch (error) {
       const apiError = error instanceof ApiError ? error : null;
       if (apiError?.fields) form.setErrors(apiError.fields);

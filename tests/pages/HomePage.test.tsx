@@ -15,7 +15,7 @@ const cardTitles = (container: HTMLElement) =>
 describe('HomePage', () => {
   it('shows a loading status, then 5 trending and 24 recommended shows without duplicates', async () => {
     const { container } = renderWithProviders(<AppRoutes />, { route: '/' });
-    expect(screen.getByRole('status')).toHaveTextContent('Loading shows');
+    expect(screen.getAllByRole('status').some((status) => status.textContent === 'Loading shows')).toBe(true);
 
     const trendingList = await screen.findByRole('list', { name: 'Trending shows' });
     const trendingTitles = cardTitles(trendingList);
