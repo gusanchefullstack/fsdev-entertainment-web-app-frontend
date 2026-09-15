@@ -1,0 +1,84 @@
+/*
+ * Design tokens — the only place for design values (constitution: Technology & Structure).
+ * Source: Figma variables bound in frames 16081:2720, 16081:1459, 16092:8793, 16093:2665,
+ * 16081:3145, 16081:3176, 16081:5357, 16081:7536 (research.md R10).
+ */
+:root {
+  /* Colors */
+  --color-blue-950: #10141e;
+  --color-blue-900: #161d2f;
+  --color-blue-500: #5a698f;
+  --color-red-500: #fc4747;
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* Derived colors used by the design (16081:1459 hover states, 16092:43 trending card) */
+  --color-bookmark-bg: rgb(16 20 30 / 50%); /* blue-950 at 50%, bookmark circle */
+  --color-card-hover-dim: rgb(0 0 0 / 50%); /* image dim on card hover */
+  --color-play-pill: rgb(255 255 255 / 25%); /* "Play" pill background */
+  --gradient-card-overlay: linear-gradient(180deg, rgb(0 0 0 / 0%) 0%, rgb(0 0 0 / 75%) 100%); /* colors/gradient/01 */
+  --opacity-meta: 0.75; /* year · category · rating line */
+
+  /* Spacing */
+  --space-0: 0;
+  --space-100: 8px;
+  --space-200: 16px;
+  --space-300: 24px;
+  --space-400: 32px;
+  --space-500: 40px;
+  --space-900: 72px;
+  --space-1000: 80px;
+
+  /* Radius (16092:43 cards, 16092:8403 sidebar) */
+  --radius-card: 8px;
+  --radius-nav: 10px;
+  --radius-nav-desktop: 20px;
+  --radius-play-pill: 28.5px;
+
+  /* Typography: Outfit, line-height 1.25 */
+  --font-family: 'Outfit', sans-serif;
+  --line-height: 1.25;
+  --font-weight-light: 300;
+  --font-weight-medium: 500;
+
+  /* Text presets — mobile values (16081:7536) */
+  --text-preset-1-size: 20px;
+  --text-preset-1-weight: 300;
+  --text-preset-1-letter-spacing: -0.3px;
+  --text-preset-2-size: 16px;
+  --text-preset-2-weight: 300;
+  --text-preset-2-medium-weight: 500;
+  --text-preset-2-letter-spacing: 0;
+  --text-preset-3-size: 15px;
+  --text-preset-3-weight: 500;
+  --text-preset-3-letter-spacing: 0;
+  --text-preset-4-size: 14px;
+  --text-preset-4-weight: 500;
+  --text-preset-4-letter-spacing: 0;
+  --text-preset-5-size: 12px;
+  --text-preset-5-weight: 300;
+  --text-preset-5-letter-spacing: 0;
+  --text-preset-6-size: 11px;
+  --text-preset-6-weight: 300;
+  --text-preset-6-letter-spacing: 0;
+}
+
+/* Tablet and desktop text presets (16081:5357, 16081:2720) */
+@media (min-width: 768px) {
+  :root {
+    --text-preset-1-size: 32px;
+    --text-preset-1-weight: 300;
+    --text-preset-1-letter-spacing: -0.5px;
+    --text-preset-2-size: 24px;
+    --text-preset-2-weight: 300;
+    --text-preset-2-medium-weight: 500;
+    --text-preset-3-size: 18px;
+    --text-preset-3-weight: 500;
+    --text-preset-4-size: 15px;
+    --text-preset-4-weight: 300;
+    --text-preset-5-size: 13px;
+    --text-preset-5-weight: 300;
+    --text-preset-6-size: 13px;
+    --text-preset-6-weight: 300;
+  }
+}
