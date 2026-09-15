@@ -41,6 +41,13 @@
   --radius-nav-desktop: 20px;
   --radius-play-pill: 28.5px;
 
+  /* Auth card title keeps Text Preset 1 desktop size on every screen (16081:8261) */
+  --text-auth-title-size: 32px;
+  --text-auth-title-letter-spacing: -0.5px;
+  --radius-auth-card: 10px;
+  --radius-auth-card-desktop: 20px;
+  --radius-button: 6px;
+
   /* Typography: Outfit, line-height 1.25 */
   --font-family: 'Outfit', sans-serif;
   --line-height: 1.25;

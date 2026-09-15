@@ -1,0 +1,128 @@
+/* Figma: 16081:3200 / 16081:3145 (desktop + error), 16081:5807 (tablet), 16081:8283 (mobile) */
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-500);
+  width: 100%;
+  padding: var(--space-300) var(--space-300) var(--space-400);
+  border-radius: var(--radius-auth-card);
+  background: var(--color-blue-900);
+}
+
+.title {
+  font-size: var(--text-auth-title-size);
+  font-weight: var(--font-weight-light);
+  letter-spacing: var(--text-auth-title-letter-spacing);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-500);
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-300);
+}
+
+.field {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--space-200);
+  padding: 0 var(--space-200) var(--space-200);
+  border-bottom: 1px solid var(--color-blue-500);
+  transition: border-color 150ms ease-out;
+}
+
+.field:hover,
+.field:focus-within {
+  border-bottom-color: var(--color-white);
+}
+
+.field.invalid {
+  border-bottom-color: var(--color-red-500);
+}
+
+.input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  background: transparent;
+  font-size: var(--text-preset-4-size);
+  font-weight: var(--font-weight-light);
+  caret-color: var(--color-red-500);
+  outline: none;
+}
+
+.input::placeholder {
+  color: var(--color-white);
+  opacity: 0.5;
+}
+
+.fieldError {
+  flex: none;
+  font-size: var(--text-preset-5-size);
+  color: var(--color-red-500);
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-300);
+}
+
+.formError {
+  font-size: var(--text-preset-4-size);
+  color: var(--color-red-500);
+  text-align: center;
+}
+
+.formError a {
+  margin-inline-start: var(--space-100);
+  text-decoration: underline;
+}
+
+.submit {
+  height: 48px;
+  border-radius: var(--radius-button);
+  background: var(--color-red-500);
+  font-size: var(--text-preset-4-size);
+  font-weight: var(--font-weight-light);
+  transition: background-color 150ms ease-out, color 150ms ease-out;
+}
+
+.submit:hover,
+.submit:focus-visible {
+  background: var(--color-white);
+  color: var(--color-blue-950);
+}
+
+.submit:disabled {
+  cursor: progress;
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-100);
+  font-size: var(--text-preset-4-size);
+  font-weight: var(--font-weight-light);
+}
+
+.footer a {
+  color: var(--color-red-500);
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+  .card {
+    padding: var(--space-400);
+    border-radius: var(--radius-auth-card-desktop);
+  }
+}

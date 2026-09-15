@@ -1,0 +1,31 @@
+/* Figma: logo centered 48px (mobile) / 80px (tablet+) from the top; card 56px / 80px below it */
+.layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(var(--space-500) + var(--space-200));
+  min-height: 100dvh;
+  padding: calc(var(--space-500) + var(--space-100)) var(--space-300) var(--space-500);
+}
+
+.logoLink {
+  display: block;
+  border-radius: var(--radius-card);
+}
+
+.logo {
+  width: 32px;
+  height: 25.6px;
+}
+
+.main {
+  width: 100%;
+  max-width: 400px;
+}
+
+@media (min-width: 768px) {
+  .layout {
+    gap: var(--space-1000);
+    padding-top: var(--space-1000);
+  }
+}
