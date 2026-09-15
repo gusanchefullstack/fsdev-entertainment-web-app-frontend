@@ -1,0 +1,229 @@
+/*
+ * Figma: regular cards 16092:3645 (mobile), 16092:1895 (tablet), 16092:174 (desktop);
+ * trending cards 16092:3512 (mobile), 16092:43 (tablet/desktop); hover 16081:1459.
+ */
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-100);
+  min-width: 0;
+}
+
+.trending:focus-visible {
+  outline-offset: -2px;
+}
+
+.media {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-card);
+  background: var(--color-blue-900);
+}
+
+.regular .media {
+  aspect-ratio: 164 / 110;
+}
+
+.trending {
+  width: 240px;
+  height: 140px;
+}
+
+.trending .media {
+  position: absolute;
+  inset: 0;
+}
+
+.image,
+.placeholder {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.placeholder {
+  background: var(--color-blue-900);
+}
+
+/* Hover: image dims and the "Play" pill appears */
+.playOverlay {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: var(--color-card-hover-dim);
+  opacity: 0;
+  transition: opacity 150ms ease-out;
+  pointer-events: none;
+}
+
+.card:hover .playOverlay,
+.card:focus-within .playOverlay {
+  opacity: 1;
+}
+
+.playPill {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-200);
+  padding: var(--space-100) var(--space-300) var(--space-100) var(--space-100);
+  border-radius: var(--radius-play-pill);
+  font-size: var(--text-preset-3-size);
+  font-weight: var(--font-weight-medium);
+  isolation: isolate;
+}
+
+.playPill::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: var(--color-play-pill);
+}
+
+.playIcon {
+  width: 30px;
+  height: 30px;
+}
+
+.actions {
+  position: absolute;
+  top: var(--space-100);
+  right: var(--space-100);
+  z-index: 1;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-100);
+  min-width: 0;
+}
+
+.trending .info {
+  position: absolute;
+  inset: auto 0 0;
+  height: 70px;
+  justify-content: center;
+  padding: var(--space-200);
+  border-radius: 0 0 var(--radius-card) var(--radius-card);
+  background: var(--gradient-card-overlay);
+  pointer-events: none;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-100);
+  font-weight: var(--font-weight-light);
+  opacity: var(--opacity-meta);
+  white-space: nowrap;
+}
+
+.regular .meta {
+  font-size: var(--text-preset-6-size);
+}
+
+.trending .meta {
+  font-size: var(--text-preset-5-size);
+}
+
+.dot {
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: var(--color-white);
+  opacity: var(--opacity-meta-dot);
+}
+
+.category {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-100);
+}
+
+.categoryIcon {
+  width: 10px;
+  height: 10px;
+}
+
+.trending .categoryIcon {
+  width: 12px;
+  height: 12px;
+}
+
+.title {
+  overflow: hidden;
+  font-weight: var(--font-weight-medium);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.regular .title {
+  font-size: var(--text-preset-4-size);
+}
+
+.trending .title {
+  font-size: var(--text-preset-3-size);
+}
+
+@media (min-width: 768px) {
+  .regular .media {
+    aspect-ratio: 220 / 140;
+  }
+
+  .regular .actions {
+    top: var(--space-200);
+    right: var(--space-200);
+  }
+
+  .trending {
+    width: 470px;
+    height: 230px;
+  }
+
+  .trending .actions {
+    top: var(--space-200);
+    right: var(--space-300);
+  }
+
+  .trending .info {
+    height: 100px;
+    padding: var(--space-200) var(--space-300);
+  }
+
+  .regular .meta {
+    font-size: var(--text-preset-5-size);
+  }
+
+  .trending .meta {
+    font-size: var(--text-preset-4-size);
+  }
+
+  .dot {
+    width: 3px;
+    height: 3px;
+  }
+
+  .categoryIcon {
+    width: 12px;
+    height: 12px;
+  }
+
+  .regular .title {
+    font-size: var(--text-preset-3-size);
+  }
+
+  .trending .title {
+    font-size: var(--text-preset-2-size);
+  }
+}
+
+@media (min-width: 1024px) {
+  .regular .media {
+    aspect-ratio: 280 / 174;
+  }
+}

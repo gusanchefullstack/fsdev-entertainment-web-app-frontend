@@ -1,10 +1,10 @@
-import { Route, Routes } from 'react-router';
-import { NotFoundPage } from './pages/NotFoundPage/NotFoundPage';
+import { AppProviders } from './AppProviders';
+import { AppRoutes } from './AppRoutes';
 
 export function App() {
   return (
-    <Routes>
-      <Route path="*" element={<NotFoundPage />} />
-    </Routes>
+    <AppProviders>
+      <AppRoutes />
+    </AppProviders>
   );
 }

@@ -3,6 +3,7 @@ import userEvent from '@testing-library/user-event';
 import type { ReactElement } from 'react';
 import { MemoryRouter, Route, Routes, useLocation } from 'react-router';
 import { ApiClientContext } from '../../src/api/ApiClient';
+import { AppProviders } from '../../src/AppProviders';
 import { createFakeApi, type FakeApi } from './fakeApi';
 
 interface Options {
@@ -27,7 +28,7 @@ export function renderWithProviders(ui: ReactElement, { route = '/', api = creat
     <MemoryRouter initialEntries={[route]}>
       <ApiClientContext value={api}>
         <LocationSpy />
-        {ui}
+        <AppProviders>{ui}</AppProviders>
       </ApiClientContext>
     </MemoryRouter>,
   );

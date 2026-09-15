@@ -1,0 +1,26 @@
+/* Figma: 16081:5827 (mobile), 16081:3220 (tablet), 16081:13 (desktop) */
+.row {
+  display: flex;
+  gap: var(--space-200);
+  margin-inline-end: calc(-1 * var(--page-padding-inline-end, 0px));
+  padding-inline-end: var(--page-padding-inline-end, 0px);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.row::-webkit-scrollbar {
+  display: none;
+}
+
+.item {
+  flex: none;
+  scroll-snap-align: start;
+}
+
+@media (min-width: 768px) {
+  .row {
+    gap: var(--space-500);
+  }
+}

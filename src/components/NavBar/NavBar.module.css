@@ -1,0 +1,107 @@
+/*
+ * Figma: mobile header 16092:3471, tablet bar 16092:1724, desktop sidebar 16092:8403;
+ * icon states (default blue-500, hover red-500, active white) from 16081:1459.
+ */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+  padding-inline: var(--space-200);
+  background: var(--color-blue-900);
+}
+
+.logoLink {
+  display: block;
+  border-radius: var(--radius-card);
+}
+
+.logo {
+  width: 25px;
+  height: 20px;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-300);
+}
+
+.link {
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-card);
+}
+
+.icon {
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-color: var(--color-blue-500);
+  mask: var(--icon) center / contain no-repeat;
+  transition: background-color 150ms ease-out;
+}
+
+.link:hover .icon {
+  background-color: var(--color-red-500);
+}
+
+.link[aria-current='page'] .icon {
+  background-color: var(--color-white);
+}
+
+.account {
+  display: flex;
+  justify-content: flex-end;
+  width: 24px;
+}
+
+@media (min-width: 768px) {
+  .nav {
+    height: 72px;
+    padding-inline: var(--space-300);
+    border-radius: var(--radius-nav);
+  }
+
+  .logo {
+    width: 32px;
+    height: 25.6px;
+  }
+
+  .links {
+    gap: var(--space-400);
+  }
+
+  .icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .account {
+    width: 32px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .nav {
+    flex-direction: column;
+    justify-content: flex-start;
+    width: var(--layout-sidebar-width);
+    height: 100%;
+    padding-block: var(--space-400);
+    padding-inline: 0;
+    border-radius: var(--radius-nav-desktop);
+  }
+
+  .links {
+    flex-direction: column;
+    gap: var(--space-500);
+    margin-top: var(--space-900);
+  }
+
+  .account {
+    justify-content: center;
+    width: 40px;
+    margin-top: auto;
+  }
+}

@@ -1,0 +1,61 @@
+/* No Figma frame exists for these states; styled only with Design System tokens. */
+.placeholders {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-200);
+}
+
+.placeholder {
+  aspect-ratio: 164 / 110;
+  border-radius: var(--radius-card);
+  background: var(--color-blue-900);
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-300);
+  padding-block: var(--space-300);
+}
+
+.text {
+  font-size: var(--text-preset-2-size);
+  font-weight: var(--text-preset-2-weight);
+}
+
+.retry {
+  padding: var(--space-100) var(--space-300);
+  border-radius: var(--radius-nav);
+  background: var(--color-red-500);
+  font-size: var(--text-preset-4-size);
+  font-weight: var(--font-weight-light);
+}
+
+.retry:hover {
+  background: var(--color-white);
+  color: var(--color-blue-950);
+}
+
+@media (min-width: 768px) {
+  .placeholders {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: var(--space-400);
+    row-gap: var(--space-300);
+  }
+
+  .placeholder {
+    aspect-ratio: 220 / 140;
+  }
+}
+
+@media (min-width: 1024px) {
+  .placeholders {
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: var(--space-500);
+  }
+
+  .placeholder {
+    aspect-ratio: 280 / 174;
+  }
+}

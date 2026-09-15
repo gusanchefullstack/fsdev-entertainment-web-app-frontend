@@ -18,6 +18,7 @@
   --color-play-pill: rgb(255 255 255 / 25%); /* "Play" pill background */
   --gradient-card-overlay: linear-gradient(180deg, rgb(0 0 0 / 0%) 0%, rgb(0 0 0 / 75%) 100%); /* colors/gradient/01 */
   --opacity-meta: 0.75; /* year · category · rating line */
+  --opacity-meta-dot: 0.5; /* dot separators inside the meta line */
 
   /* Spacing */
   --space-0: 0;
@@ -28,6 +29,11 @@
   --space-500: 40px;
   --space-900: 72px;
   --space-1000: 80px;
+
+  /* Layout (16081:2720: sidebar 96px at x=32, content starts at x=164, y=64) */
+  --layout-sidebar-width: 96px;
+  --layout-content-start-desktop: 164px;
+  --layout-content-top-desktop: 64px;
 
   /* Radius (16092:43 cards, 16092:8403 sidebar) */
   --radius-card: 8px;
@@ -78,7 +84,5 @@
     --text-preset-4-weight: 300;
     --text-preset-5-size: 13px;
     --text-preset-5-weight: 300;
-    --text-preset-6-size: 13px;
-    --text-preset-6-weight: 300;
   }
 }
