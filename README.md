@@ -52,7 +52,7 @@ Search is scoped per page (all shows, movies, TV series or your bookmarks), a bo
 ### Links
 
 - Solution URL: [Frontend Mentor solution](https://www.frontendmentor.io/solutions/entertainment-web-app-caUFWUJMRV)
-- Live Site URL: [fsdev-entertainment-web-app.vercel.app](https://fsdev-entertainment-web-app.vercel.app)
+- Live Site URL: [frontend-kappa-three-73.vercel.app](https://frontend-kappa-three-73.vercel.app/)
 
 > The API runs on Render's free tier, which sleeps when idle. The first request after a quiet
 > period can take 30-60 seconds to wake; after that the app responds normally.
